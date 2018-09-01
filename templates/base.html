@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en" manifest="{% static 'manifest.appcache' %}">
+{#<html lang="en" manifest="{% static 'manifest.appcache' %}">#}
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block head_title %}{% endblock head_title %}</title>
@@ -11,28 +12,26 @@
         <header class="mdl-layout__header main_bar">
             <div class="mdl-layout__header-row">
                 <span class="mdl-layout-title bar_title"
-                      onclick="window.location='{% url 'sampleapp:index' %}'">
+                      onclick="window.location='{% url 'website:root' %}'">
                     Ting!
                 </span>
             </div>
-
-            {% block tab_bar %}{% endblock %}
         </header>
 
         <div class = "mdl-layout__drawer">
             <span class="mdl-layout-title bar_title"
-                  onclick="window.location='{% url 'sampleapp:index' %}'">
+                  onclick="window.location='{% url 'website:root' %}'">
                 Ting!
             </span>
 
             <nav class = "mdl-navigation">
                 <div class="about_link_class mdl-navigation__link">
-                    <a class="about_link_tag some_link" href="{% url 'sampleapp:about' %}">About</a>
+                    <a class="about_link_tag some_link" href="{% url 'website:about' %}">About</a>
                 </div>
 
                 {% if user.is_authenticated %}
                         <div class="logout_link_class mdl-navigation__link">
-                            <a class="logout_link_tag some_link" href="{% url 'sampleapp:logout' %}">Logout</a>
+                            <a class="logout_link_tag some_link" href="#">Logout</a>
                         </div>
                 {% endif %}
 
@@ -53,7 +52,7 @@
                 lastname = "{{ user.last_name }}";
         </script>
     {% endif %}
-    <script type="text/javascript" src="{% static "js/appbar.js" %}"></script>
+{#    <script type="text/javascript" src="{% static "js/appbar.js" %}"></script>#}
 
 </body>
 </html>
