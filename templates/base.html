@@ -8,37 +8,18 @@
     {% include "snippets/css.html" %}
 </head>
 <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header main_bar">
-            <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title bar_title"
-                      onclick="window.location='{% url 'website:root' %}'">
-                    Ting!
-                </span>
-            </div>
-        </header>
-
-        <div class = "mdl-layout__drawer">
-            <span class="mdl-layout-title bar_title"
-                  onclick="window.location='{% url 'website:root' %}'">
-                Ting!
-            </span>
-
-            <nav class = "mdl-navigation">
-                <div class="about_link_class mdl-navigation__link">
-                    <a class="about_link_tag some_link" href="{% url 'website:about' %}">About</a>
-                </div>
-
+    <div class="">
+        <nav>
+        <div class="nav-wrapper main_bar">
+            <a href="{% url 'website:root' %}" class="brand-logo">Ting</a>
+            <ul class="right hide-on-med-and-down">
+                <li class="about_link_tag some_link"><a href="{% url 'website:about' %}">About</a></li>
                 {% if user.is_authenticated %}
-                        <div class="logout_link_class mdl-navigation__link">
-                            <a class="logout_link_tag some_link" href="#">Logout</a>
-                        </div>
+                    <li class="logout_link_tag some_link"><a href="#">Logout</a></li>
                 {% endif %}
-
-                {% block navigation %}{% endblock %}
-
-            </nav>
+            </ul>
         </div>
+        </nav>
 
         {% block content %}{% endblock content %}
     </div>
