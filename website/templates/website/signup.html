@@ -23,20 +23,6 @@ Sign up || Ting
     <form method="post" action="{% url "website:signup" %}">
 
         {% csrf_token %}
-    {#    <table class="form_table">#}
-    {#        {% for field in signup_form %}#}
-    {#            <tr>#}
-    {#                <td>{{ field.label_tag }}</td>#}
-    {#                <td>{{ field }}</td>#}
-    {#                <td>#}
-    {#                    {% for err in field.errors %}#}
-    {#                        <p>{{ err }}</p>#}
-    {#                    {% endfor %}#}
-    {#                </td>#}
-    {#            </tr>#}
-    {#        {% endfor %}#}
-    {#    </table>#}
-
         {{ signup_form }}
 
         <button class="waves-effect waves-light btn-large" type="submit">Sign up</button>

@@ -53,5 +53,12 @@ def signin_view(request):
     :param request: An HttpRequest
     :return: A rendering of the Sign in page.
     """
+    if request.method == 'POST':
+        signin_form = forms.SignInForm(request.POST)
 
-    return render(request, template_name="website/signin.html")
+        if signin_form.is_valid():
+            return HttpResponseRedirect(reverse('website:signin'))
+    else:
+        signin_form = forms.SignInForm()
+
+    return render(request, template_name="website/signin.html", context={'signin_form': signin_form})

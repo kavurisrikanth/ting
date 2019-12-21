@@ -7,13 +7,16 @@
 <!-- The main contents of the page. -->
 {% block content %}
     <div class="box_div">
-    <main class="mdl-layout__content">
 
-        <!-- Sign up tab -->
-        <a href="{% url 'website:signup' %}" class="waves-effect waves-light btn-large">Sign up</a>
+        <div class="auth">
+            <!-- Sign up tab -->
+            <a href="{% url 'website:signup' %}" class="waves-effect waves-light btn-large">Sign up</a>
 
-        <!-- Sign in tab -->
-        <a href="{% url 'website:signin' %}" class="waves-effect waves-light btn-large">Sign in</a>
+            <!-- Sign in tab -->
+            <a href="{% url 'website:signin' %}" class="waves-effect waves-light btn-large">Sign in</a>
+        </div>
+
+        {% include "website/piano.html" %}
 
         <!-- Try it out tab -->
         <!-- Commented out for now -->
@@ -26,7 +29,6 @@
 {#            </div>#}
 {#        </section>#}
 
-    </main>
     </div>
 {% endblock %}
 
