@@ -124,7 +124,11 @@ li {
 }
 
 .non-first-key {
-    margin:0 0 0 -1.1em;
+    margin:0 0 0 -1.2em;
+}
+
+.start-key {
+    margin-left: 1.0em;
 }
 
 .piano-div {
