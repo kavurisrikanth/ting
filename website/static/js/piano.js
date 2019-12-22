@@ -1,16 +1,12 @@
 document.onload = go();
 
 function go() {
-    let pianoDiv = document.querySelector('.piano-div');
-    pianoDiv.innerHTML = '<p>Paragraph written using JavaScript.</p>';
     drawPianoSection();
-
-    console.log("Hello, world");
 }
 
 function drawWhiteKey(first) {
     let white = document.createElement('li');
-    white.setAttribute('class', 'white' + (first ? '' : ' non_first_key'));
+    white.setAttribute('class', 'white' + (first ? '' : ' non-first-key'));
     return white;
 }
 
@@ -38,11 +34,17 @@ function drawPianoPattern(keysList) {
 
 function drawPianoSection() {
     let pianoDiv = document.querySelector('.piano-div');
+    let optionsDiv = document.createElement('div');
+    optionsDiv.innerHTML += '<p>Options here.</p>';
+    pianoDiv.appendChild(optionsDiv);
+
+    let keysDiv = document.createElement('div');
     let keysList = document.createElement('ul');
 
     drawPianoPattern(keysList);
     drawPianoPattern(keysList);
     drawPianoPattern(keysList);
 
-    pianoDiv.appendChild(keysList);
+    keysDiv.appendChild(keysList);
+    pianoDiv.appendChild(keysDiv);
 }

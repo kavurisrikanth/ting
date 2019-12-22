@@ -123,8 +123,21 @@ li {
     margin: 0 0 0 -0.8em;
 }
 
-.non_first_key {
+.non-first-key {
     margin:0 0 0 -1.1em;
+}
+
+.piano-div {
+    padding: 1%;
+    border:1px solid #000;
+    height: 22em;
+    border-radius:8px 8px 8px 8px;
+}
+
+.options-div {
+    padding: 1%;
+    margin: 1%;
+    border:1px solid #000;
 }
 
 .a,.g,.f,.d,.c { margin:0 0 0 -1.8em;  }
